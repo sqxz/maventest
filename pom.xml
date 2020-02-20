@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>styd</groupId>   <!--类似于Java的包名,一般理解为公司或者组织名称-->
+    <artifactId>maventest</artifactId> <!--类似于Java的类名，通常是项目名称-->
+    <version>1.0-SNAPSHOT</version>
+
+
+</project>
