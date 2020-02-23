@@ -1,5 +1,6 @@
 target/
 .idea
+log/
 maventest.iml
 pom.xml.tag
 pom.xml.releaseBackup
