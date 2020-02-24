@@ -1,3 +1,8 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.lang.reflect.Field;
+
 /**
  * @ClassName Demo
  * @Description TDD
@@ -5,18 +10,38 @@
  * @Date 2020/2/20 15:17
  **/
 public class Demo {
-    public static void main(String[] args) {
-        Person person = new Person("bian","woman");
-        person.getName();
-        person.getSex();
 
-        Person student = new Student("szh","man","100");
+    final static Logger logger = LogManager.getLogger(Demo.class);//用final修饰field可以阻止被重新赋值
 
-        student.run();
-
-        String[] names = new String[]{"1","2"};
-        for (String name:names) {
-            System.out.println(name);
-        }
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
+        Demo demo = new Demo();
+        int a = demo.getTax(new SalaryTax(),1000);
+        int b = demo.getTax(new OtherTax(),1000);
+        logger.info(a);
+        logger.info(b);
+        demo.reflectionTest();
+        reflectionGetFiled();
     }
+
+
+    public Integer getTax(Tax tax,int income){
+        return tax.getTax(income);
+    }
+
+    public void  reflectionTest(){ //每加载一种class，JVM就为其创建一个Class类型的实例
+        String a = "cba";
+        String b = "abc";
+        boolean test1 = (a.getClass()==b.getClass());
+        logger.info(test1);
+    }
+
+    public static void  reflectionGetFiled() throws NoSuchFieldException, IllegalAccessException {
+        Student student = new Student("shen","111111");
+        Field field = Student.class.getDeclaredField("name");
+        field.setAccessible(true);
+        field.get(student);
+        logger.info(field);
+        logger.info(field.get(student));
+    }
+
 }
