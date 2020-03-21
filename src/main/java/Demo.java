@@ -1,6 +1,7 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -15,7 +16,7 @@ public class Demo {
 
     final static Logger logger = LogManager.getLogger(Demo.class);//用final修饰field可以阻止被重新赋值
 
-    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, NoSuchMethodException, InvocationTargetException, InstantiationException {
         Demo demo = new Demo();
         int a = demo.getTax(new SalaryTax(),1000);
         int b = demo.getTax(new OtherTax(),1000);
@@ -23,6 +24,10 @@ public class Demo {
         logger.info(b);
         demo.reflectionTest();
         reflectionGetFiled();
+
+        Constructor constructor = Integer.class.getConstructor(int.class);
+        Integer n1 = (Integer) constructor.newInstance(123);
+        logger.info(n1);
     }
 
 
@@ -54,5 +59,4 @@ public class Demo {
         String grade = (String) method2.invoke(null,null);//调用静态方法时，由于无需指定实例对象，所以invoke方法传入的第一个参数永远为null
         logger.info(grade);
     }
-
 }
