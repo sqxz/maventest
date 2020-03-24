@@ -5,6 +5,9 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @ClassName Demo
@@ -28,6 +31,17 @@ public class Demo {
         Constructor constructor = Integer.class.getConstructor(int.class);
         Integer n1 = (Integer) constructor.newInstance(123);
         logger.info(n1);
+
+
+        Student[] students = new Student[]{
+                new Student("shen","111111",90),
+                new Student("bian","111111",50)
+        };
+
+        Arrays.sort(students);//student实现排序，Student类需要实现Comparable<T>接口
+
+        System.out.println(Arrays.toString(students));
+
     }
 
 

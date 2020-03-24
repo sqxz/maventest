@@ -1,6 +1,7 @@
 target/
 .idea
 log/
+.DS_Store
 maventest.iml
 pom.xml.tag
 pom.xml.releaseBackup
