@@ -2,6 +2,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import redis.clients.jedis.Jedis;
 
+import java.io.File;
+
 /**
  * @ClassName JedisTest
  * @Description TDD
@@ -11,10 +13,12 @@ import redis.clients.jedis.Jedis;
 public class JedisTest {
     final static Logger LOGGER = LogManager.getLogger(JedisTest.class);
     public static void main(String[] args){
-        Jedis jedis = new Jedis("127.0.0.1",6379);
+        Jedis jedis = new Jedis("123.57.35.3",6379);
+        jedis.auth("root");
         String ping = jedis.ping();
         LOGGER.info(ping);
         jedis.set("shopToken","this is shop_token");
+        jedis.set("shopToken","this is brand_token");
         String shopToken = jedis.get("shopToken");
         LOGGER.info(shopToken);
     }

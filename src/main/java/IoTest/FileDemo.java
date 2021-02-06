@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * @ClassName FileDemo
@@ -14,8 +15,8 @@ import java.io.File;
 public class FileDemo {
     static final Logger LOGGER = LogManager.getLogger(FileDemo.class);
 
-    public static void main(String[] args){
-        File file = new File("src/main/resources/log4j2.xml");
+    public static void main(String[] args) throws IOException {
+        File file = new File("log4j2.xml");
         LOGGER.info(file.getName());
         LOGGER.info(File.separatorChar);
         LOGGER.info(file.getPath());
