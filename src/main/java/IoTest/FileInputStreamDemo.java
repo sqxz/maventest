@@ -8,11 +8,33 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
+<<<<<<< HEAD
 public class FileInputStreamDemo {
     static final Logger LOGGER = LogManager.getLogger(FileInputStreamDemo.class);
 
     public static void main(String[] args) throws IOException {
        InputStream inputStream = new FileInputStream("src/main/resources/IoTest/test1.xml");
        inputStream.read();
+=======
+/**
+ * @ClassName FileInputStreamDemo
+ * @Description TDD
+ * @Author shenzhenghuan
+ * @Date 2021/1/29 17:49
+ **/
+public class FileInputStreamDemo {
+    static final Logger LOGGER = LogManager.getLogger(FileInputStreamDemo.class);
+
+    public static void main(String[] args) {
+        try {
+            InputStream inputStream = new FileInputStream("src/main/resources/log4j2.xml");
+            inputStream.read();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+>>>>>>> 08b98a45294e2ebcdd98cb31d13b5d648c39b76b
     }
 }
