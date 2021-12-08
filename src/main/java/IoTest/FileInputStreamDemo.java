@@ -7,15 +7,14 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-
-<<<<<<< HEAD
+/*
 public class FileInputStreamDemo {
     static final Logger LOGGER = LogManager.getLogger(FileInputStreamDemo.class);
 
     public static void main(String[] args) throws IOException {
        InputStream inputStream = new FileInputStream("src/main/resources/IoTest/test1.xml");
        inputStream.read();
-=======
+=======*/
 /**
  * @ClassName FileInputStreamDemo
  * @Description TDD
@@ -34,7 +33,5 @@ public class FileInputStreamDemo {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
->>>>>>> 08b98a45294e2ebcdd98cb31d13b5d648c39b76b
     }
 }
