@@ -21,7 +21,7 @@ public class SendMsgByThread {
         @Override
         public void run() {
             String startWorkTime =  LocalTime.of(21, 05).toString();
-            String endWorkTime =  LocalTime.of(18, 15).toString();
+            String endWorkTime =  LocalTime.of(14, 46).toString();
             DateTimeFormatter df = DateTimeFormatter.ofPattern("HH:mm");
 
 
