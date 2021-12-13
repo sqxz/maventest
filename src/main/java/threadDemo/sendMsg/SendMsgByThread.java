@@ -20,7 +20,7 @@ public class SendMsgByThread {
     static class MsgThread extends Thread{
         @Override
         public void run() {
-            String startWorkTime =  LocalTime.of(08, 55).toString();
+            String startWorkTime =  LocalTime.of(8, 55).toString();
             String endWorkTime =  LocalTime.of(18, 15).toString();
             DateTimeFormatter df = DateTimeFormatter.ofPattern("HH:mm");
 
